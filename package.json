@@ -1,0 +1,15 @@
+{
+  "name": "hain-plugin-shortcut",
+  "version": "0.0.1",
+  "description": "a hain-plugin for regex shortcuts (launch an executable using regex)",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Jaemin Jo <jmjo@hcil.snu.ac.kr>",
+  "keywords": ["hain0"],
+  "license": "MIT",
+  "hain": {
+    "prefix": null,
+    "usage": "type a shortcut to launch an executable (e.g. type \"c\" for calc.exe)",
+    "icon": "#fa fa-search"
+  }
+}

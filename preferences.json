@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "shortcuts" :{
+      "type": "array",
+      "title": "Comma-separated tuples of shortcuts, e.g. (regex for an executable),(path to the executable)",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "(^c.*),(${SystemRoot}\\System32\\calc.exe)"
+      ]
+    }
+  }
+}
