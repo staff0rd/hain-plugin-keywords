@@ -3,7 +3,7 @@
   "properties": {
     "shortcuts" :{
       "type": "array",
-      "title": "Comma-separated tuples of shortcuts, e.g. (regex for an executable),(path to the executable)",
+      "title": "Comma-separated tuples of shortcuts, e.g. (regex for an executable),(path to the executable) (RESTART required)",
       "items": {
         "type": "string"
       },

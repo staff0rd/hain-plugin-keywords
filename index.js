@@ -29,7 +29,7 @@ module.exports = (context) => {
 				var _, pattern, filePath;
 				[_, pattern, filePath] = result;
 
-				const regexp = new RegExp(pattern);
+				const regexp = new RegExp(pattern, "i");
 
 				if(regexp.test(query)) {
 					filePath = injectEnvVariable(filePath);
