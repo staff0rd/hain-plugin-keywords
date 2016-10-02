@@ -31,12 +31,10 @@ module.exports = (context) => {
 
 			if(match) {
 				const query_trim = query.replace(match, "").trim();
-				filePath = injectEnvVariable(filePath);
+				
 				let result = {
-					id: filePath,
 					payload: query_trim,
 					title: query_trim,
-					desc: filePath,
 					group: 'Keyword',
 					score: 100	
 				};
@@ -51,9 +49,13 @@ module.exports = (context) => {
 						result.icon = "#fa fa-globe"
 					}
 				} else { // file
+					filePath = injectEnvVariable(filePath);
 					const filePath_base64 = new Buffer(filePath).toString('base64');
 					result.icon = `icon://${filePath_base64}`;
+					result.desc = filePath;
 				}
+
+				result.id = filePath;
 
 				res.add(result);
 			}
