@@ -1,6 +1,6 @@
 {
   "name": "hain-plugin-keywords",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a hain-plugin for launching files, urls and searches via keyword",
   "main": "index.js",
   "scripts": {},
