@@ -3,13 +3,31 @@
   "properties": {
     "shortcuts" :{
       "type": "array",
-      "title": "Comma-separated tuples of shortcuts, e.g. (regex for an executable),(path to the executable) (RESTART required)",
+      "title": "Use $q in path to replace with query.  Restart required after any change.",
       "items": {
-        "type": "string"
+        "type": "object",
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "title": "Keyword"
+          },
+          "path": {
+            "type": "string",
+            "title": "File path or URL"
+          }
+        },
+        "required": ["keyword", "path"]
       },
-      "default": [
-        "(^c.*),(${SystemRoot}\\System32\\calc.exe)"
-      ]
+      "default": [ {
+        "keyword": "g",
+        "path": "http://google.com/search?q=$q"
+      }, {
+        "keyword": "b",
+        "path": "http://www.bing.com/search?q=$q"
+      }, {
+        "keyword": "ddg",
+        "path": "https://duckduckgo.com/?q=$q"
+      }]
     }
   }
 }

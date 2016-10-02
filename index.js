@@ -1,6 +1,8 @@
 'use strict';
 
 const path = require('path');
+const twitter = require('twitter-text');
+const url = require('url');
 
 function injectEnvVariable(dirPath) {
   let _path = dirPath;
@@ -15,7 +17,6 @@ module.exports = (context) => {
 	const app = context.app;
 	const logger = context.logger;
 	const prefs = context.preferences.get();
-	const parser = /^\((.*)\),\((.*)\)$/;
 	const shell = context.shell;
 
 	function startup() {		
@@ -23,33 +24,44 @@ module.exports = (context) => {
 
 	function search(query, res) {
 		prefs.shortcuts.forEach((pref) => {
-			var result = parser.exec(pref);
+			const pattern = "^" + pref.keyword;
+			const regexp = new RegExp(pattern, "i");
+			const match = regexp.exec(query);
+			let filePath = pref.path;
 
-			if(result != null) {
-				var _, pattern, filePath;
-				[_, pattern, filePath] = result;
+			if(match) {
+				const query_trim = query.replace(match, "").trim();
+				filePath = injectEnvVariable(filePath);
+				let result = {
+					id: filePath,
+					payload: query_trim,
+					title: query_trim,
+					desc: filePath,
+					group: 'Keyword',
+					score: 100	
+				};
 
-				const regexp = new RegExp(pattern, "i");
+				const urls = twitter.extractUrls(filePath);
+				if (urls.length) {
+					if (filePath.indexOf("$q") > -1) {
+						result.desc = `Search ${url.parse(filePath).hostname}`
+						result.icon = "#fa fa-search"
+					} else {
+						result.desc = `Open ${url.parse(filePath).hostname}`
+						result.icon = "#fa fa-globe"
+					}
+				} else { // file
+					const filePath_base64 = new Buffer(filePath).toString('base64');
+					result.icon = `icon://${filePath_base64}`;
+				}
 
-				if(regexp.test(query)) {
-					filePath = injectEnvVariable(filePath);
-					
-			      	const filePath_base64 = new Buffer(filePath).toString('base64');
-
-					res.add({
-						id: filePath,
-						title: path.basename(filePath, path.extname(filePath)),
-						desc: filePath,
-						icon: `icon://${filePath_base64}`,
-						group: 'Shortcuts'
-					})
-				}				
+				res.add(result);
 			}
 		});
 	}
 
 	function execute(id, payload) {
-		shell.openItem(id);
+		shell.openItem(id.replace("$q", payload));
 		app.close();
 	}
 
