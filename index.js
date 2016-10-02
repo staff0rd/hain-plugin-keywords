@@ -62,8 +62,8 @@ module.exports = (context) => {
 	}
 
 	function execute(id, payload) {
-		shell.openItem(id.replace("$q", payload));
 		app.close();
+		shell.openItem(id.replace("$q", payload));
 	}
 
 	return { startup, search, execute };
