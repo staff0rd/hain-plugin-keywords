@@ -24,14 +24,13 @@ module.exports = (context) => {
 
 	function search(query, res) {
 		prefs.keywords.forEach((pref) => {
-			const pattern = "^" + pref.keyword;
+			const pattern = "^" + pref.keyword + "( |$)";
 			const regexp = new RegExp(pattern, "i");
 			const match = regexp.exec(query);
 			let filePath = pref.path;
 
 			if(match) {
-				const query_trim = query.replace(match, "").trim();
-				
+				const query_trim = query.replace(match[0], "").trim();
 				let result = {
 					payload: query_trim,
 					title: query_trim,
