@@ -1,6 +1,6 @@
 # hain-plugin-keywords
 
-a [hain](https://github.com/appetizermonster/hain)-plugin for launching files, urls and searches via keyword.  Originally extended from [hain-plugin-shortcut](https://github.com/e-/hain-plugin-shortcut).
+Originally extended from [hain-plugin-shortcut](https://github.com/e-/hain-plugin-shortcut), this plugin allows users to launch files and urls via keyword.  Search engine calls are also possible, for example google, bing & duckduckgo, without needing the stand-alone plugins for each.  Custom urls/files can be configured via preferences.
 
 ![screenshot](https://raw.githubusercontent.com/staff0rd/hain-plugin-keywords/master/screenshot.png)
 
