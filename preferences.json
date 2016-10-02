@@ -1,9 +1,9 @@
 {
   "type": "object",
   "properties": {
-    "shortcuts" :{
+    "keywords" :{
       "type": "array",
-      "title": "Use $q in path to replace with query.  Restart required after any change.",
+      "title": "Use $q in path to replace with query.\nRestart required after any change.",
       "items": {
         "type": "object",
         "properties": {

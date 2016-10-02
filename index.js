@@ -23,7 +23,7 @@ module.exports = (context) => {
 	}	
 
 	function search(query, res) {
-		prefs.shortcuts.forEach((pref) => {
+		prefs.keywords.forEach((pref) => {
 			const pattern = "^" + pref.keyword;
 			const regexp = new RegExp(pattern, "i");
 			const match = regexp.exec(query);
