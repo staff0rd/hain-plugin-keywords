@@ -2,7 +2,7 @@
 
 Keywords plugin for [Hain](https://github.com/appetizermonster/hain).
 
-![screenshot](https://raw.githubusercontent.com/e-/hain-plugin-shortcut/master/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/staff0rd/hain-plugin-keywords/master/screenshot.png)
 
 ## Install
 
