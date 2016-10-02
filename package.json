@@ -1,7 +1,7 @@
 {
   "name": "hain-plugin-keywords",
   "version": "1.0.0",
-  "description": "a hain-plugin for launching files and urls via keyword",
+  "description": "a hain-plugin for launching files, urls and searches via keyword",
   "main": "index.js",
   "scripts": {},
   "author": "Stafford Williams <stafford@atqu.in>",
@@ -11,5 +11,9 @@
     "prefix": null,
     "usage": "type a keyword to launch an executable or url",
     "icon": "#fa fa-search"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/staff0rd/hain-plugin-keywords.git"
   }
 }

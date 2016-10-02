@@ -1,6 +1,6 @@
 # hain-plugin-keywords
 
-Plugin for [Hain](https://github.com/appetizermonster/hain) allowing launching of urls and files via keywords.  Originally extended from [hain-plugin-shortcut](https://github.com/e-/hain-plugin-shortcut).
+a [hain](https://github.com/appetizermonster/hain)-plugin for launching files, urls and searches via keyword.  Originally extended from [hain-plugin-shortcut](https://github.com/e-/hain-plugin-shortcut).
 
 ![screenshot](https://raw.githubusercontent.com/staff0rd/hain-plugin-keywords/master/screenshot.png)
 
