@@ -1,11 +1,13 @@
 {
   "name": "hain-plugin-keywords",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a hain-plugin for launching files, urls and searches via keyword",
   "main": "index.js",
   "scripts": {},
   "author": "Stafford Williams <stafford@atqu.in>",
-  "keywords": ["hain-0.5.0"],
+  "keywords": [
+    "hain-0.5.0"
+  ],
   "license": "MIT",
   "hain": {
     "prefix": null,
@@ -15,5 +17,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/staff0rd/hain-plugin-keywords.git"
+  },
+  "dependencies": {
+    "twitter-text": "^1.14.0"
   }
 }
